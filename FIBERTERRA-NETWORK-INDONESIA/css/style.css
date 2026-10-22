@@ -5,7 +5,6 @@
   --color-accent: #9B51E0;
   --color-dark: #101828;
   --color-text: #475467;
-  --color-light: #FFFFFF;
   --color-border: #E4E7EC;
   --font-heading: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -15,6 +14,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: page-exit .18s ease-in both; }
+::view-transition-new(root) { animation: page-enter .28s ease-out both; }
+@keyframes page-exit { to { opacity: 0; } }
+@keyframes page-enter { from { opacity: 0; } }
 body { margin: 0; color: var(--color-text); background: #fff; font: 15px/1.65 var(--font-body); -webkit-font-smoothing: antialiased; }
 body.menu-open { overflow: hidden; }
 img { display: block; width: auto; max-width: 100%; height: auto; }
@@ -268,7 +272,6 @@ h1, h2, h3, p { margin-top: 0; }
   .service-card p { min-height: 0; margin-bottom: 8px; }
   .service-icon { width: 37px; height: 37px; min-height: 37px; flex-basis: 37px; margin-bottom: 10px; }
   .service-icon img { width: 28px; height: 28px; }
-  .about-note { right: 0; bottom: 0; }
   .about-description, .coverage-copy > p { font-size: 11px; }
   .pricing-action { flex-direction: column; text-align: center; }
   .pricing-action p { font-size: 10px; }
@@ -299,5 +302,6 @@ h1, h2, h3, p { margin-top: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .01ms; }
   .reveal { opacity: 1; transform: none; }
 }

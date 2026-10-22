@@ -13,8 +13,33 @@
       --purple: #9954b7;
       --cyan: #18c9df;
       --ink: #16131a;
-      --muted: #5f5963;
-      --line: #d7d4d8;
+    }
+
+    @view-transition {
+      navigation: auto;
+    }
+
+    ::view-transition-old(root) {
+      animation: page-exit .18s ease-in both;
+    }
+
+    ::view-transition-new(root) {
+      animation: page-enter .28s ease-out both;
+    }
+
+    @keyframes page-exit {
+      to { opacity: 0; }
+    }
+
+    @keyframes page-enter {
+      from { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation-duration: .01ms;
+      }
     }
 
     * { box-sizing: border-box; }
@@ -256,30 +281,30 @@
         <img src="assets/Img-No-Bg/FNI-LOGO.png" alt="Ikon FIBERTERRA NETWORK ID" width="512" height="512">
       </div>
 
-      <a class="service-node enterprise" href="fni-home.html#layanan" aria-label="Internet Dedicated">
+      <a class="service-node enterprise" href="fni-home.html" aria-label="Internet Dedicated">
         <img src="assets/Img-No-Bg/Corpo-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
       </a>
-      <a class="service-node broadband" href="fni-home.html#pricelist" aria-label="Home Broadband">
+      <a class="service-node broadband" href="fni-home.html" aria-label="Home Broadband">
         <img src="assets/Img-No-Bg/House-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
       </a>
-      <a class="service-node partnership" href="fni-home.html#kontak" aria-label="Partnership">
+      <a class="service-node partnership" href="fni-home.html" aria-label="Partnership">
         <img src="assets/Img-No-Bg/Partner-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
       </a>
-      <a class="service-node cloud" href="fni-home.html#kontak" aria-label="Cloud and Network">
+      <a class="service-node cloud" href="fni-home.html" aria-label="Cloud and Network">
         <img src="assets/Img-No-Bg/Cloud-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
       </a>
     </div>
 
-    <a class="service-label enterprise" href="fni-home.html#layanan" aria-label="Internet Dedicated">
+    <a class="service-label enterprise" href="fni-home.html" aria-label="Internet Dedicated">
       <img src="assets/Img-No-Bg/FNI-H1.png" alt="Internet Dedicated">
     </a>
-    <a class="service-label broadband" href="fni-home.html#pricelist" aria-label="Home Broadband">
+    <a class="service-label broadband" href="fni-home.html" aria-label="Home Broadband">
       <img src="assets/Img-No-Bg/FNI-H1.png" alt="Home Broadband">
     </a>
-    <a class="service-label partnership" href="fni-home.html#kontak" aria-label="Partnership">
+    <a class="service-label partnership" href="fni-home.html" aria-label="Partnership">
       <img src="assets/Img-No-Bg/FNI-H1.png" alt="Partnership">
     </a>
-    <a class="service-label cloud" href="fni-home.html#kontak" aria-label="Cloud and Network">
+    <a class="service-label cloud" href="fni-home.html" aria-label="Cloud and Network">
       <img src="assets/Img-No-Bg/FNI-H1.png" alt="Cloud and Network">
     </a>
   </main>
