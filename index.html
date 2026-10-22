@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Layanan FIBERTERRA NETWORK ID: internet dedicated, home broadband, partnership, dan cloud.">
+  <title>FIBERTERRA NETWORK ID</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --magenta: #e8197f;
+      --purple: #9954b7;
+      --cyan: #18c9df;
+      --ink: #16131a;
+      --muted: #5f5963;
+      --line: #d7d4d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 300px;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px clamp(14px, 3vw, 42px);
+      background: #fff;
+      color: var(--ink);
+      font-family: Arial, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .diagram {
+      width: min(100%, 1320px);
+      display: grid;
+      grid-template-columns: minmax(130px, 1fr) minmax(320px, 590px) minmax(130px, 1fr);
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      column-gap: clamp(22px, 4vw, 64px);
+      row-gap: 12px;
+    }
+
+    .diagram-stage {
+      position: relative;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      width: 100%;
+      aspect-ratio: 1;
+      isolation: isolate;
+    }
+
+    .diagram-ring {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .connector {
+      stroke: #cbc7ce;
+      stroke-width: 1.5;
+    }
+
+    .ring-base {
+      fill: none;
+      stroke: #eeeaf0;
+      stroke-width: 28;
+    }
+
+    .ring-segment {
+      fill: none;
+      stroke-width: 28;
+      stroke-linecap: butt;
+      transform: rotate(-90deg);
+      transform-origin: 300px 300px;
+    }
+
+    .ring-segment.cyan { stroke: var(--cyan); }
+    .ring-segment.purple { stroke: var(--purple); }
+    .ring-segment.magenta { stroke: var(--magenta); }
+
+    .brand-core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 54%;
+      aspect-ratio: 1;
+      min-width: 0;
+      display: grid;
+      place-items: center;
+      padding: 10%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(153, 84, 183, .22), 0 16px 38px rgba(32, 22, 35, .2), 0 3px 10px rgba(32, 22, 35, .08);
+      transition: transform .25s ease;
+    }
+
+    .brand-core:hover { transform: translate(-50%, -50%) scale(1.04); }
+
+    .brand-core img {
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+      min-height: 0;
+      object-fit: contain;
+      transition: transform .25s ease;
+    }
+
+    .brand-core:hover img { transform: scale(1.05); }
+
+    .service-node {
+      position: absolute;
+      z-index: 2;
+      width: 24%;
+      height: 24%;
+      min-width: 0;
+      min-height: 0;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(76, 45, 90, .18);
+      color: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .service-node:hover,
+    .service-node:focus-visible {
+      transform: scale(1.06);
+      box-shadow: 0 0 0 3px rgba(24, 201, 223, .55), 0 14px 28px rgba(76, 45, 90, .25);
+    }
+
+    .service-node:focus-visible,
+    .service-label:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 5px;
+    }
+
+    .service-node img {
+      width: 138%;
+      height: 138%;
+      min-width: 0;
+      min-height: 0;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: cover;
+      transition: transform .25s ease;
+    }
+
+    .service-node:hover img,
+    .service-node:focus-visible img { transform: scale(1.05); }
+
+    .service-node.enterprise { top: 5%; left: 5%; }
+    .service-node.broadband { top: 5%; right: 5%; }
+    .service-node.partnership { bottom: 5%; left: 5%; }
+    .service-node.cloud { right: 5%; bottom: 5%; }
+
+    .service-label {
+      width: fit-content;
+      max-width: 230px;
+      padding: 8px 0;
+      transition: opacity .2s ease;
+    }
+
+    .service-label:hover,
+    .service-label:focus-visible { opacity: .82; }
+
+    .service-label img {
+      display: block;
+      width: 100%;
+      max-width: 230px;
+      height: auto;
+      transition: transform .25s ease;
+    }
+
+    .service-label:hover img,
+    .service-label:focus-visible img { transform: scale(1.05); }
+
+    .service-label.enterprise { grid-column: 1; grid-row: 1; justify-self: end; text-align: right; }
+    .service-label.broadband { grid-column: 3; grid-row: 1; justify-self: start; }
+    .service-label.partnership { grid-column: 1; grid-row: 2; justify-self: end; text-align: right; }
+    .service-label.cloud { grid-column: 3; grid-row: 2; justify-self: start; }
+
+    @media (max-width: 760px) {
+      body { padding: 20px 14px; }
+
+      .diagram {
+        width: min(100%, 480px);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto auto;
+        gap: 14px 18px;
+      }
+
+      .diagram-stage {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: min(100%, 440px, calc(100svh - 40px));
+        justify-self: center;
+      }
+
+      .service-label {
+        width: 100%;
+        max-width: none;
+        padding: 7px 2px;
+        text-align: center !important;
+      }
+
+      .service-label img { max-width: 190px; }
+
+      .service-label.enterprise { grid-column: 1; grid-row: 2; }
+      .service-label.broadband { grid-column: 2; grid-row: 2; }
+      .service-label.partnership { grid-column: 1; grid-row: 3; }
+      .service-label.cloud { grid-column: 2; grid-row: 3; }
+    }
+
+    @media (max-width: 360px) {
+      .diagram { column-gap: 10px; row-gap: 10px; }
+      .service-label img { max-width: 160px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="diagram" aria-label="Layanan FIBERTERRA NETWORK ID">
+    <div class="diagram-stage">
+      <svg class="diagram-ring" viewBox="0 0 600 600" aria-hidden="true">
+        <line class="connector" x1="300" y1="300" x2="100" y2="100"></line>
+        <line class="connector" x1="300" y1="300" x2="500" y2="100"></line>
+        <line class="connector" x1="300" y1="300" x2="100" y2="500"></line>
+        <line class="connector" x1="300" y1="300" x2="500" y2="500"></line>
+        <circle class="ring-base" cx="300" cy="300" r="228"></circle>
+        <circle class="ring-segment cyan" cx="300" cy="300" r="228" stroke-dasharray="337 1097" stroke-dashoffset="0"></circle>
+        <circle class="ring-segment purple" cx="300" cy="300" r="228" stroke-dasharray="337 1097" stroke-dashoffset="-358"></circle>
+        <circle class="ring-segment magenta" cx="300" cy="300" r="228" stroke-dasharray="337 1097" stroke-dashoffset="-716"></circle>
+        <circle class="ring-segment purple" cx="300" cy="300" r="228" stroke-dasharray="337 1097" stroke-dashoffset="-1074"></circle>
+      </svg>
+
+      <div class="brand-core">
+        <img src="assets/Img-No-Bg/FNI-LOGO.png" alt="Ikon FIBERTERRA NETWORK ID" width="512" height="512">
+      </div>
+
+      <a class="service-node enterprise" href="fni-home.html#layanan" aria-label="Internet Dedicated">
+        <img src="assets/Img-No-Bg/Corpo-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      </a>
+      <a class="service-node broadband" href="fni-home.html#pricelist" aria-label="Home Broadband">
+        <img src="assets/Img-No-Bg/House-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      </a>
+      <a class="service-node partnership" href="fni-home.html#kontak" aria-label="Partnership">
+        <img src="assets/Img-No-Bg/Partner-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      </a>
+      <a class="service-node cloud" href="fni-home.html#kontak" aria-label="Cloud and Network">
+        <img src="assets/Img-No-Bg/Cloud-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      </a>
+    </div>
+
+    <a class="service-label enterprise" href="fni-home.html#layanan" aria-label="Internet Dedicated">
+      <img src="assets/Img-No-Bg/FNI-H1.png" alt="Internet Dedicated">
+    </a>
+    <a class="service-label broadband" href="fni-home.html#pricelist" aria-label="Home Broadband">
+      <img src="assets/Img-No-Bg/FNI-H1.png" alt="Home Broadband">
+    </a>
+    <a class="service-label partnership" href="fni-home.html#kontak" aria-label="Partnership">
+      <img src="assets/Img-No-Bg/FNI-H1.png" alt="Partnership">
+    </a>
+    <a class="service-label cloud" href="fni-home.html#kontak" aria-label="Cloud and Network">
+      <img src="assets/Img-No-Bg/FNI-H1.png" alt="Cloud and Network">
+    </a>
+  </main>
+</body>
+</html>
