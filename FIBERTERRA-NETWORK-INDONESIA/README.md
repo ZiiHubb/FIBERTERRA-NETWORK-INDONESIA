@@ -18,7 +18,11 @@ Tidak diperlukan instalasi dependensi, proses build, atau konfigurasi backend. B
 ├── assets/
 │   ├── Img/
 │   │   ├── FNI-ICON.jpg
-│   │   └── Pricelist.jpg
+│   │   ├── layananbroadband.jpg
+│   │   ├── layananitkonsultan.jpg
+│   │   ├── layananinternetdedicated.jpg
+│   │   ├── Pricelist.jpg
+│   │   └── produklainnya.jpg
 │   └── Img-No-Bg/
 │       ├── Cloud-removebg-preview.png
 │       ├── Corpo-removebg-preview.png
@@ -35,7 +39,7 @@ Tidak diperlukan instalasi dependensi, proses build, atau konfigurasi backend. B
 └── README.md
 ```
 
-Seluruh aset gambar yang tersisa digunakan oleh salah satu halaman. Aset yang tidak direferensikan telah dihapus.
+Label layanan pada `index.html` menggunakan gambar khusus untuk Broadband, Internet Dedicated, IT Konsultan, dan Produk Lainnya. Seluruh aset gambar yang tercantum digunakan oleh salah satu halaman.
 
 ## Fitur
 
