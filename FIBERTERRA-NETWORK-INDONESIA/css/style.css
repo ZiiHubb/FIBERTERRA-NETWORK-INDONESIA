@@ -43,7 +43,8 @@ h1, h2, h3, p { margin-top: 0; }
 .nav-links a { position: relative; display: inline-block; padding: 10px 0; font-size: 12px; font-weight: 600; transition: color .2s ease; }
 .nav-links a::after { position: absolute; right: 0; bottom: 4px; left: 0; height: 2px; content: ""; transform: scaleX(0); transform-origin: left; background: var(--color-accent); transition: transform .2s ease; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--color-accent); }
-.nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
+.nav-links a:hover::after, .nav-links a:focus-visible::after, .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+.nav-links a[aria-current="page"] { color: var(--color-primary); }
 .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 21px; border: 1px solid transparent; border-radius: 999px; font-size: 13px; font-weight: 700; line-height: 1.3; transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease; }
 .button:hover { transform: translateY(-2px); }
 .button:focus-visible, .nav-links a:focus-visible, .social-links a:focus-visible { outline: 3px solid rgba(155,81,224,.45); outline-offset: 3px; }
@@ -94,6 +95,7 @@ h1, h2, h3, p { margin-top: 0; }
 .section-heading h2, .about-copy h2, .coverage-copy h2 { margin-bottom: 11px; color: var(--color-dark); font: 700 clamp(26px, 3vw, 34px)/1.25 var(--font-heading); letter-spacing: -.03em; }
 .section-heading h2 span, .about-copy h2 span, .coverage-copy h2 span { color: var(--color-primary); }
 .section-heading > p { margin-bottom: 0; color: var(--color-text); font-size: 13px; line-height: 1.7; }
+.mission-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .service-card { min-width: 0; padding: 20px 18px; border: 1px solid var(--color-border); border-radius: 13px; background: #fff; box-shadow: var(--shadow-card); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
 .service-card:hover { transform: translateY(-4px); border-color: rgba(11,95,194,.3); box-shadow: 0 12px 28px rgba(16,24,40,.11); }
@@ -105,6 +107,15 @@ h1, h2, h3, p { margin-top: 0; }
 .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--color-primary); font-size: 10px; font-weight: 700; }
 .text-link span { font-size: 14px; transition: transform .2s ease; }
 .text-link:hover span { transform: translate(2px, -2px); }
+
+.product-resources-section { background: #F8FAFC; }
+.product-resource-groups { display: grid; gap: 28px; }
+.product-resource-group h3 { margin-bottom: 12px; color: var(--color-dark); font: 600 16px/1.4 var(--font-heading); }
+.product-resource-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.product-resource-card { min-width: 0; min-height: 112px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 15px 12px; border: 1px solid var(--color-border); border-radius: 12px; background: #fff; box-shadow: var(--shadow-card); text-align: center; }
+.product-resource-card img, .product-resource-wordmark { width: 100%; height: 42px; object-fit: contain; }
+.product-resource-card span { color: var(--color-dark); font-size: 11px; font-weight: 600; line-height: 1.45; }
+.product-resource-card .product-resource-wordmark { display: grid; place-items: center; color: #E31E24; font: 700 19px/1 var(--font-heading); letter-spacing: -.06em; }
 
 .about-section { overflow: hidden; background: #F8FAFC; }
 .about-layout { display: grid; grid-template-columns: minmax(0, 760px); justify-content: center; }
@@ -267,6 +278,7 @@ h1, h2, h3, p { margin-top: 0; }
   .section-heading { margin-bottom: 25px; }
   .section-heading h2, .about-copy h2, .coverage-copy h2, .contact-copy h2 { font-size: 26px; }
   .section-heading > p { font-size: 11px; }
+  .mission-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; gap: 10px; }
   .service-card { padding: 16px; }
   .service-card p { min-height: 0; margin-bottom: 8px; }

@@ -98,11 +98,18 @@
       place-items: center;
       padding: 8%;
       transform: translate(-50%, -50%);
+      transition: transform .25s ease;
+    }
+
+    .brand-core::before {
+      position: absolute;
+      inset: 0;
+      content: "";
       border: 1px solid rgba(153, 84, 183, .18);
       border-radius: 16%;
       background: #fff;
       box-shadow: 0 16px 40px rgba(32, 22, 35, .12);
-      transition: transform .25s ease;
+      transform: rotate(45deg);
     }
 
     .brand-core:hover { transform: translate(-50%, -50%) scale(1.04); }
@@ -234,7 +241,6 @@
       .brand-core {
         width: 62%;
         padding: 6%;
-        border-radius: 16%;
       }
 
       .service-label {
@@ -278,29 +284,29 @@
   </style>
 </head>
 <body>
-  <main class="diagram" aria-label="Layanan FIBERTERRA NETWORK ID">
+  <main class="diagram" id="beranda" aria-label="Layanan FIBERTERRA NETWORK ID">
     <div class="diagram-stage">
-      <div class="brand-core">
-        <img src="assets/Img-No-Bg/FNI-LOGO.png" alt="Ikon FIBERTERRA NETWORK ID" width="512" height="512">
-      </div>
+      <a class="brand-core" href="#beranda" aria-label="Kembali ke atas halaman">
+        <img src="assets/img-no-bg/FNI-LOGO.png" alt="Ikon FIBERTERRA NETWORK ID" width="512" height="512">
+      </a>
 
     </div>
 
-    <a class="service-label enterprise" href="fni-home.html" aria-label="Internet Dedicated">
-      <img class="service-icon" src="assets/Img-No-Bg/Corpo-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/Img/layananinternetdedicated.jpg" alt="Layanan Internet Dedicated">
+    <a class="service-label enterprise" href="internet-dedicated.html" aria-label="Internet Dedicated">
+      <img class="service-icon" src="assets/img-no-bg/Corpo-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <img class="service-title" src="assets/img/layananinternetdedicated.jpg" alt="Layanan Internet Dedicated">
     </a>
-    <a class="service-label broadband" href="fni-home.html" aria-label="Home Broadband">
-      <img class="service-icon" src="assets/Img-No-Bg/House-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/Img/layananbroadband.jpg" alt="Layanan Broadband">
+    <a class="service-label broadband" href="broadband.html" aria-label="Home Broadband">
+      <img class="service-icon" src="assets/img-no-bg/House-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <img class="service-title" src="assets/img/layananbroadband.jpg" alt="Layanan Broadband">
     </a>
-    <a class="service-label partnership" href="fni-home.html" aria-label="Layanan IT Konsultan">
-      <img class="service-icon" src="assets/Img-No-Bg/Partner-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/Img/layananitkonsultan.jpg" alt="Layanan IT Konsultan">
+    <a class="service-label partnership" href="it-konsultan.html" aria-label="Layanan IT Konsultan">
+      <img class="service-icon" src="assets/img-no-bg/Partner-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <img class="service-title" src="assets/img/layananitkonsultan.jpg" alt="Layanan IT Konsultan">
     </a>
-    <a class="service-label cloud" href="fni-home.html" aria-label="Produk Lainnya">
-      <img class="service-icon" src="assets/Img-No-Bg/Cloud-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/Img/produklainnya.jpg" alt="Produk Lainnya">
+    <a class="service-label cloud" href="produk-lainnya.html" aria-label="Produk Lainnya">
+      <img class="service-icon" src="assets/img-no-bg/Cloud-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <img class="service-title" src="assets/img/produklainnya.jpg" alt="Produk Lainnya">
     </a>
   </main>
 </body>
