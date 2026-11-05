@@ -4,8 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="index,follow">
   <meta name="description" content="Layanan FIBERTERRA NETWORK ID: internet dedicated, home broadband, IT konsultan, dan produk lainnya.">
-  <title>FIBERTERRA NETWORK ID</title>
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FIBERTERRA NETWORK ID">
+  <meta property="og:title" content="Pilih Layanan | FIBERTERRA NETWORK ID">
+  <meta property="og:description" content="Layanan FIBERTERRA NETWORK ID: internet dedicated, home broadband, IT konsultan, dan produk lainnya.">
+  <meta property="og:image" content="assets/img/social-preview.jpg">
+  <meta property="og:image:alt" content="FIBERTERRA NETWORK ID — konektivitas dan teknologi untuk bisnis Anda">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pilih Layanan | FIBERTERRA NETWORK ID">
+  <meta name="twitter:description" content="Layanan FIBERTERRA NETWORK ID: internet dedicated, home broadband, IT konsultan, dan produk lainnya.">
+  <meta name="twitter:image" content="assets/img/social-preview.jpg">
+  <meta name="twitter:image:alt" content="FIBERTERRA NETWORK ID — konektivitas dan teknologi untuk bisnis Anda">
+  <title>Pilih Layanan | FIBERTERRA NETWORK ID</title>
   <style>
     :root {
       color-scheme: light;
@@ -65,6 +81,9 @@
     }
 
     a { color: inherit; text-decoration: none; }
+    .skip-link { position: fixed; z-index: 10; top: 12px; left: 12px; padding: 10px 16px; transform: translateY(-160%); border-radius: 8px; background: #fff; color: var(--ink); box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+    .skip-link:focus { transform: translateY(0); outline: 3px solid var(--cyan); outline-offset: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
     .diagram {
       position: relative;
@@ -161,12 +180,18 @@
       transition: transform .25s ease;
     }
 
-    .service-label .service-title {
+    .service-label .service-picture {
       display: block;
+      flex: 0 1 min(56%, 360px);
       width: min(56%, 360px);
       max-width: 360px;
-      height: auto;
       transition: transform .25s ease;
+    }
+
+    .service-label .service-picture img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .service-label:hover img,
@@ -222,7 +247,7 @@
         height: clamp(96px, 11vw, 132px);
       }
 
-      .service-label .service-title { width: min(58%, 280px); }
+      .service-label .service-picture { flex-basis: min(58%, 280px); width: min(58%, 280px); }
     }
 
     @media (max-width: 640px) {
@@ -260,7 +285,8 @@
         height: clamp(72px, min(20vw, 10vh), 112px);
       }
 
-      .service-label .service-title {
+      .service-label .service-picture {
+        flex-basis: min(100%, 210px);
         width: min(100%, 210px);
       }
 
@@ -275,7 +301,7 @@
       .service-label { gap: 8px; padding: 8px; }
       .service-label { padding-top: 4px; padding-bottom: 4px; }
       .service-label .service-icon { flex-basis: 66px; width: 66px; height: 66px; }
-      .service-label .service-title { width: min(100%, 150px); }
+      .service-label .service-picture { flex-basis: min(100%, 150px); width: min(100%, 150px); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -284,29 +310,47 @@
   </style>
 </head>
 <body>
-  <main class="diagram" id="beranda" aria-label="Layanan FIBERTERRA NETWORK ID">
+  <a class="skip-link" href="#beranda">Lewati ke pilihan layanan</a>
+  <main class="diagram" id="beranda" aria-label="Layanan FIBERTERRA NETWORK ID" tabindex="-1">
+    <h1 class="sr-only">Pilih Layanan FIBERTERRA NETWORK ID</h1>
     <div class="diagram-stage">
-      <a class="brand-core" href="home.html" aria-label="Kembali ke atas halaman">
-        <img src="assets/img-no-bg/FNI-LOGO.png" alt="Ikon FIBERTERRA NETWORK ID" width="512" height="512">
+      <a class="brand-core" href="home.html" aria-label="Buka beranda perusahaan">
+        <img src="assets/img-no-bg/fni-logo.png" alt="Ikon FIBERTERRA NETWORK ID" width="512" height="512">
       </a>
 
     </div>
 
     <a class="service-label enterprise" href="internet-dedicated.html" aria-label="Internet Dedicated">
-      <img class="service-icon" src="assets/img-no-bg/Corpo-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/img/layananinternetdedicated.jpg" alt="Layanan Internet Dedicated">
+      <img class="service-icon" src="assets/img-no-bg/corpo-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <picture class="service-picture">
+        <source type="image/avif" srcset="assets/optimized/layananinternetdedicated-480.avif 480w, assets/optimized/layananinternetdedicated-768.avif 768w, assets/optimized/layananinternetdedicated-1024.avif 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <source type="image/webp" srcset="assets/optimized/layananinternetdedicated-480.webp 480w, assets/optimized/layananinternetdedicated-768.webp 768w, assets/optimized/layananinternetdedicated-1024.webp 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <img class="service-title" src="assets/img/layananinternetdedicated.jpg" alt="" width="1100" height="614">
+      </picture>
     </a>
     <a class="service-label broadband" href="broadband.html" aria-label="Home Broadband">
-      <img class="service-icon" src="assets/img-no-bg/House-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/img/layananbroadband.jpg" alt="Layanan Broadband">
+      <img class="service-icon" src="assets/img-no-bg/house-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <picture class="service-picture">
+        <source type="image/avif" srcset="assets/optimized/layananbroadband-480.avif 480w, assets/optimized/layananbroadband-768.avif 768w, assets/optimized/layananbroadband-1024.avif 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <source type="image/webp" srcset="assets/optimized/layananbroadband-480.webp 480w, assets/optimized/layananbroadband-768.webp 768w, assets/optimized/layananbroadband-1024.webp 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <img class="service-title" src="assets/img/layananbroadband.jpg" alt="" width="1024" height="572">
+      </picture>
     </a>
     <a class="service-label partnership" href="it-konsultan.html" aria-label="Layanan IT Konsultan">
-      <img class="service-icon" src="assets/img-no-bg/Partner-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/img/layananitkonsultan.jpg" alt="Layanan IT Konsultan">
+      <img class="service-icon" src="assets/img-no-bg/partner-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <picture class="service-picture">
+        <source type="image/avif" srcset="assets/optimized/layananitkonsultan-480.avif 480w, assets/optimized/layananitkonsultan-768.avif 768w, assets/optimized/layananitkonsultan-1024.avif 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <source type="image/webp" srcset="assets/optimized/layananitkonsultan-480.webp 480w, assets/optimized/layananitkonsultan-768.webp 768w, assets/optimized/layananitkonsultan-1024.webp 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <img class="service-title" src="assets/img/layananitkonsultan.jpg" alt="" width="1024" height="572">
+      </picture>
     </a>
     <a class="service-label cloud" href="produk-lainnya.html" aria-label="Produk Lainnya">
-      <img class="service-icon" src="assets/img-no-bg/Cloud-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
-      <img class="service-title" src="assets/img/produklainnya.jpg" alt="Produk Lainnya">
+      <img class="service-icon" src="assets/img-no-bg/cloud-removebg-preview.png" alt="" aria-hidden="true" width="512" height="512">
+      <picture class="service-picture">
+        <source type="image/avif" srcset="assets/optimized/produklainnya-480.avif 480w, assets/optimized/produklainnya-768.avif 768w, assets/optimized/produklainnya-1024.avif 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <source type="image/webp" srcset="assets/optimized/produklainnya-480.webp 480w, assets/optimized/produklainnya-768.webp 768w, assets/optimized/produklainnya-1024.webp 1024w" sizes="(max-width: 640px) 48vw, (max-width: 960px) 34vw, 360px">
+        <img class="service-title" src="assets/img/produklainnya.jpg" alt="" width="1024" height="572">
+      </picture>
     </a>
   </main>
 </body>
